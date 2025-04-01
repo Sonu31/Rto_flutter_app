@@ -1,0 +1,34 @@
+name: rto_app
+description: "A new Flutter project."
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.7.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  flutter_svg: ^2.0.9
+  font_awesome_flutter: ^10.8.0
+  url_launcher: ^6.3.1
+  speedometer: ^1.2.2
+  rxdart: ^0.26.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/icons/icon_filter.svg
+
+    - assets/images/rtoAppIcon.png
+
+#  - family: Roboto
+#      fonts:
+#          - asset: assets/fonts/Roboto-Regular.ttf
