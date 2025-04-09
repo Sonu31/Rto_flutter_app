@@ -26,10 +26,10 @@ class _SpeedMeterState  extends State<SpeedMeterScreen>{
   }
   @override
   Widget build(BuildContext context) {
-    return Scaffold( backgroundColor: AppColors.background, appBar: AppBar(backgroundColor: Theme.of(context).colorScheme.inversePrimary,title: Text("SpeedoMeter"),leading:IconButton(onPressed:(){
+    return Scaffold( backgroundColor: AppColors.background, appBar: AppBar(title: AppBar(backgroundColor: Theme.of(context).colorScheme.inversePrimary,title: Text("Age Calculter"),leading:IconButton(onPressed:(){
       Navigator.pop(context); // Navigate back
     }, icon:Icon(Icons.arrow_back))
-
+    )
     ),
     body:  Column(
       mainAxisAlignment: MainAxisAlignment.center,

@@ -15,6 +15,18 @@ dependencies:
   url_launcher: ^6.3.1
   speedometer: ^1.2.2
   rxdart: ^0.26.0
+  intl: ^0.18.0
+#  intl: ^0.20.2
+#  syncfusion_flutter_core: ^29.1.37
+#  syncfusion_flutter_gauges: ^29.1.37
+#  syncfusion_flutter_sliders: ^29.1.37
+  syncfusion_flutter_core: ^23.1.36
+  syncfusion_flutter_gauges: ^23.1.36
+  syncfusion_flutter_sliders: ^23.1.36
+
+
+#  syncfusion_flutter_core: ^20.4.56
+#  syncfusion_flutter_gauges: ^20.4.56
 
 dev_dependencies:
   flutter_test:
@@ -26,7 +38,6 @@ flutter:
   uses-material-design: true
   assets:
     - assets/icons/icon_filter.svg
-
     - assets/images/rtoAppIcon.png
 
 #  - family: Roboto
