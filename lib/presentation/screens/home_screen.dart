@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:rto_app/presentation/screens/find_NearPlace_screen.dart';
 import 'package:rto_app/presentation/screens/ppf_calculater.dart';
 import 'package:rto_app/presentation/screens/sip_calculater2.dart';
@@ -9,6 +10,7 @@ import 'package:rto_app/presentation/screens/vechicleAge_calculater.dart';
 
 import '../../core/theme/colors.dart';
 import 'age_calculter_screen.dart';
+import 'celebrity_cars/CelebrityCarsList.dart';
 import 'fule_calculater.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -22,6 +24,14 @@ class _HomeScreenState extends State<HomeScreen> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   int _selectedIndex = 0;
+  late FToast fToast;
+
+  @override
+  void initState() {
+    super.initState();
+    fToast = FToast();
+    fToast.init(context);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -293,16 +303,23 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Row(
                   children: List.generate(
                     10,
-                    (index) => Container(
+                    (index) =>InkWell(
+                          onTap: () {
+                              Navigator.push(context,MaterialPageRoute(builder: (context) => CelebraityCarList(),),);
+                            showToast(index);
+                          },
+                      child:   Container(
                       width: 100,
                       height: 70,
+                      decoration: BoxDecoration(color: Colors.blue,borderRadius: BorderRadius.circular(13)),
                       margin: EdgeInsets.all(4),
-                      color: Colors.red,
-                      child: Center(child: Text("Item $index")),
+                      child: Center(child: Text("Item $index",style: TextStyle(color: Colors.white),)),
                     ),
                   ),
                 ),
               ),
+              ),
+
               Container(
                 margin: EdgeInsets.only(top: 10),
                 child: Text(" Other", style: TextStyle(fontSize: 20)),
@@ -451,6 +468,23 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
       ),
+    );
+  }
+
+
+
+  void showToast(int index) {
+    fToast.showToast(
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 12.0),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(25.0),
+          color: Colors.black87,
+        ),
+        child: Text("Clicked on Item $index", style: TextStyle(color: Colors.white)),
+      ),
+      gravity: ToastGravity.BOTTOM,
+      toastDuration: Duration(seconds: 2),
     );
   }
 }

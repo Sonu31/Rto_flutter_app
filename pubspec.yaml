@@ -23,6 +23,7 @@ dependencies:
   syncfusion_flutter_core: ^23.1.36
   syncfusion_flutter_gauges: ^23.1.36
   syncfusion_flutter_sliders: ^23.1.36
+  fluttertoast: ^8.2.2
 
 
 #  syncfusion_flutter_core: ^20.4.56
