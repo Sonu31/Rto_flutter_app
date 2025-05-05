@@ -24,6 +24,9 @@ dependencies:
   syncfusion_flutter_gauges: ^23.1.36
   syncfusion_flutter_sliders: ^23.1.36
   fluttertoast: ^8.2.2
+  provider: ^6.1.1
+  http: ^0.13.3
+
 
 
 #  syncfusion_flutter_core: ^20.4.56
