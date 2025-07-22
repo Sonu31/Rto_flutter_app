@@ -1,12 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:pr'
     'ovider/provider.dart';
+import 'package:rto_app/data/models/UserList.dart';
 
 import 'PostViewModel.dart';
 import 'User.dart';
 
 class CelebraityCarList extends StatefulWidget{
-  @override
+
+/*  @override
+  Widget build(BuildContext context){
+    return ChangeNotifierProvider(create:  (context) => PostViewModel(),
+
+    );
+
+  }*/
+
+
+
   @override
   _CelebraityCarList createState() => _CelebraityCarList();
 }
@@ -14,7 +25,16 @@ class CelebraityCarList extends StatefulWidget{
 class _CelebraityCarList extends State<CelebraityCarList>{
 
 
+  late PostViewModel _viewModel;
+  late List<UserList> _userList;
 
+  @override
+  void initState() {
+    super.initState();
+    // _viewModel = PostViewModel();
+    _userList = _viewModel.posts;  // Fetching data from ViewModel
+    // printStudentData();
+  }
 
   @override
   Widget build(BuildContext context) {

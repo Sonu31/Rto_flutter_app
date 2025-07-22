@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:provider/provider.dart';
 import 'package:rto_app/presentation/screens/find_NearPlace_screen.dart';
 import 'package:rto_app/presentation/screens/ppf_calculater.dart';
 import 'package:rto_app/presentation/screens/sip_calculater2.dart';
@@ -9,8 +10,10 @@ import 'package:rto_app/presentation/screens/speedMeter_screen.dart';
 import 'package:rto_app/presentation/screens/vechicleAge_calculater.dart';
 
 import '../../core/theme/colors.dart';
+import '../../domain/usecases/get_posts_use_case.dart';
 import 'age_calculter_screen.dart';
 import 'celebrity_cars/CelebrityCarsList.dart';
+import 'celebrity_cars/PostViewModel.dart';
 import 'fule_calculater.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -305,8 +308,15 @@ class _HomeScreenState extends State<HomeScreen> {
                     10,
                     (index) =>InkWell(
                           onTap: () {
-                              Navigator.push(context,MaterialPageRoute(builder: (context) => CelebraityCarList(),),);
-                            showToast(index);
+
+
+                            // final useCase = GetPostsUseCase();
+                            //
+                            // Navigator.push(context, MaterialPageRoute(builder: (_) =>  ChangeNotifierProvider(create :(_)=>PostViewModel(getPostsUseCase: useCase),child:  CelebraityCarList() ))
+                            //
+                            
+                              // Navigator.push(context,MaterialPageRoute(builder: (context) => CelebraityCarList(),),);
+                            // showToast(index);
                           },
                       child:   Container(
                       width: 100,
